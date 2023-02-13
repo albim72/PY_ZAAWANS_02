@@ -6,7 +6,7 @@ print(set(liczbyzb))
 liczbyT = list(liczbyzb)
 # liczbyT.sort()
 # print(liczbyT)
-print(sorted(liczbyT))
+print(sorted(liczbykrt))
 print(liczbyT)
 
 def pokaz_statystyki(kolekcja):
