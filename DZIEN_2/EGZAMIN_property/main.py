@@ -1,6 +1,7 @@
 from homework import Homework
 from exam import Exam
 from grade import NewExam
+from weakegzam import WeakExam
 
 
 print("________________ HOMEWORK _______________")
@@ -38,4 +39,28 @@ print(f'matematyka: {sexam.math_grade}')
 print(f'nauka: {sexam.science_grade}')
 
 print("mamy problem!!!")
+print(f'ocena -> pierwsze podejście: {fexam.writing_grade}, ocena -> drugie podejście: {sexam.writing_grade}')
+
+
+print("________________ WEAKEXAM _______________")
+fexam = WeakExam()
+fexam.writing_grade = 78
+fexam.math_grade = 21
+fexam.science_grade = 88
+
+print("________pierwsza ocena weak_____")
+print(f'pisanie: {fexam.writing_grade}')
+print(f'matematyka: {fexam.math_grade}')
+print(f'nauka: {fexam.science_grade}')
+
+print("________druga ocena weak_____")
+sexam = WeakExam()
+sexam.writing_grade = 80
+sexam.math_grade = 56
+sexam.science_grade = 83
+print(f'pisanie: {sexam.writing_grade}')
+print(f'matematyka: {sexam.math_grade}')
+print(f'nauka: {sexam.science_grade}')
+
+print("po problemie!!!")
 print(f'ocena -> pierwsze podejście: {fexam.writing_grade}, ocena -> drugie podejście: {sexam.writing_grade}')
