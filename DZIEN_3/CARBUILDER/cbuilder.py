@@ -28,39 +28,57 @@ class Car:
         print(f'rodzaj pojazdy: {self._body.shape}')
         print(f'moc silnika: {self._engine.horsepower}')
         print(f'średnica koła: {self._wheels[0].size}')
-        
+
 class Builder(ABC):
     @abstractmethod
     def getWheel(self):pass
-    
+
     @abstractmethod
     def getEngine(self):pass
-    
+
     @abstractmethod
     def getBody(self):pass
-    
-    
+
+
 class Director:
-    
+
     __builder = None
-    
+
     def setBuilder(self,builder):
         self.__builder = builder
-        
+
     def getCar(self):
         car = Car()
-        
+
         body = self.__builder.getBody()
         car.setBody(body)
 
         engine = self.__builder.getEngine()
         car.setEngine(engine)
-        
+
         i = 0
         while i < 4:
             wheel  = self.__builder.getWheel()
             car.attachWheel(wheel)
             i+=1
-            
+
         return car
     
+class Jeep(Builder):
+
+    def getWheel(self):
+        wheel = Wheel()
+        wheel.size = 22
+        return wheel
+
+    def getEngine(self):
+        engine = Engine()
+        engine.horsepower = 398
+        return engine
+
+    def getBody(self):
+        body = Body()
+        body.shape = "SUV"
+        return body
+    
+
